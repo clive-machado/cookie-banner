@@ -130,43 +130,55 @@ CookieBanner.init({
     console.log("data", data);
 });
 
+
 console.log("cookieValue", cookieValue );
 
 
-// CookieBanner.setCookieName({  
-//   "name"    : "updated -cookies",
-//   "expires" : 7, 
-// });
+CookieBanner.setCookieName({  
+  "name"    : "updated -cookies",
+  "expires" : 7, 
+});
 
-// CookieBanner.setButton({
-//   "type"        : "banner",
-//   "title"       : "",
-//   "action"      : "accept",   
-//   "id"          : "",
-//   "class"       : "",
-//   "enable"      : true
-// });
+CookieBanner.setButton({
+  "type"        : "banner",
+  "title"       : "updated Accept All button",
+  "action"      : "accept",   
+  "id"          : "someID",
+  "class"       : "",
+  "enable"      : true
+});
 
-// CookieBanner.setContent({
-//   "type"        : "tab",
-//   "id"          : "", //unique identity
-//   "class"       : "",
-//   "position"    : 1, // only tab support
-//   "checkbox"    : true, // only tab support 
-//   "title"       : "Strict Cookies", // only tab support
-//   "template"    : "<p>These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. Without these cookies, some parts of our site or the service being requested will be impossible to provide.</p>",
-//   "enable"     : true, //only tab support
-//   "cookies"     : [{
-//     "key"     : "sad",
-//     "name"    : "asfa"
-//   },{
-//     "key"     : "dum",
-//     "name"    : "rimda"
-//   },{
-//     "key"     : "kum",
-//     "name"    : "safvfvfsvsd"
-//   }] // only tab support
-// });
+CookieBanner.setButton({
+  "type"        : "tab",
+  "title"       : "updated Accept All button",
+  "action"      : "accept",   
+  "id"          : "someID-taby",
+  "class"       : "",
+  "enable"      : true
+});
+
+CookieBanner.setContent({
+  "type"        : "tab",
+  "id"          : "modal-tab-privacy", //unique identity
+  "class"       : "",
+  "position"    : 1, // only tab support
+  "checkbox"    : true, // only tab support 
+  "title"       : "updated - Strict Cookies", // only tab support
+  "template"    : "<p>These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. Without these cookies, some parts of our site or the service being requested will be impossible to provide.</p>",
+  "enable"      : true, //only tab support
+  "show_cookies": true, //only tab support
+  "cookies"     : [{
+    "key"     : "sad",
+    "name"    : "asfa"
+  },{
+    "key"     : "dum",
+    "name"    : "rimda"
+  },{
+    "key"     : "kum",
+    "name"    : "safvfvfsvsd"
+  }] // only tab support
+});
+
 
 // CookieBanner.setContent({
 //   "type"        : "banner",
