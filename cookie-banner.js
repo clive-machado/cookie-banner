@@ -21,12 +21,12 @@ var CookieBanner = (function(){
       "position"    : 1,
       "checkbox"    : false,
       "title"       : "Your Privacy", 
-      "template"    : "<p>When you visit any web site, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalised web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.</p>",
+      "template"    : "<p>A privacy policy is a statement or a legal document (in privacy law) that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data. It fulfills a legal requirement to protect a customer or client's privacy. Personal information can be anything that can be used to identify an individual, not limited to the person's name, address, date of birth, marital status, contact information, ID issue and expiry date, financial records, credit information, medical history, where one travels, and intentions to acquire goods and services.</p>",
       "enable"      : true,
       "show_cookies": false,
       "cookies"     : [{
-        "key"     : "_authExample",
-        "name"    : "This is an Example Cookie"
+        "key"     : "dummy",
+        "name"    : "dummy"
       }]
   },{   
       "type"        : "tab",
@@ -39,9 +39,15 @@ var CookieBanner = (function(){
       "enable"      : true,
       "show_cookies": true,
       "cookies"     : [{
-        "key"     : "_authExample",
-        "name"    : "This is an Example Cookie"
-      }] 
+        "key"     : "dummy1",
+        "name"    : "dummy1"
+      },{
+        "key"     : "dummy2",
+        "name"    : "dummy2"
+      },{
+        "key"     : "dummy3",
+        "name"    : "dummy3"
+      }]
   },{   
       "type"        : "tab",
       "id"          : "modal-tab-performance", 
@@ -53,8 +59,11 @@ var CookieBanner = (function(){
       "enable"      : true,
       "show_cookies": true,
       "cookies"     : [{
-        "key"     : "_authExample",
-        "name"    : "This is an Example Cookie"
+        "key"     : "dummy1",
+        "name"    : "dummy1"
+      },{
+        "key"     : "dummy2",
+        "name"    : "dummy2"
       }]
   },{   
       "type"        : "tab",
@@ -67,8 +76,8 @@ var CookieBanner = (function(){
       "enable"      : true,
       "show_cookies": true,
       "cookies"     : [{
-        "key"     : "_authExample",
-        "name"    : "This is an Example Cookie"
+        "key"     : "dummy1",
+        "name"    : "dummy1"
       }]
   },{   
       "type"        : "tab",
@@ -81,8 +90,20 @@ var CookieBanner = (function(){
       "enable"      : true, 
       "show_cookies": true,
       "cookies"     : [{
-        "key"     : "_authExample",
-        "name"    : "This is an Example Cookie"
+        "key"     : "dummy1",
+        "name"    : "dummy1"
+      },{
+        "key"     : "dummy2",
+        "name"    : "dummy2"
+      },{
+        "key"     : "dummy3",
+        "name"    : "dummy3"
+      },{
+        "key"     : "dummy4",
+        "name"    : "dummy4"
+      },{
+        "key"     : "dummy5",
+        "name"    : "dummy5"
       }]
   }],
     "button"      : [{
