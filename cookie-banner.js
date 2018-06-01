@@ -518,6 +518,14 @@ var CookieBanner = (function(){
       }
     }
   };
+  var _destroy = {
+    bannerLayout : function(){
+      document.getElementById("cookie-banner-container") && document.getElementById("cookie-banner-container").remove();
+    },
+    modalLayout  :function(){
+      document.getElementById("modal-settings-wrapper") && document.getElementById("modal-settings-wrapper").remove();
+    }
+  }
   var _clickAction = {
     /* Dear Maintainer, please arrange functions in alphabetical order makes it easier to find. */
 
@@ -631,18 +639,29 @@ var CookieBanner = (function(){
     // I //
     init             :function(settings, callback){
       _proxy.updateSettingsConfig(settings);
+      _destroy.bannerLayout();
+      _destroy.modalLayout();
       _init();
       _userCallback = callback;
     },
     // S //
     setCookieName    :function(reqOptions){
-      // _proxy.updateCookieName(reqOptions);
+      _proxy.updateCookieName(reqOptions);
+      _destroy.bannerLayout();
+      _destroy.modalLayout();
+      this.init({}, _userCallback);
     },
     setButton        :function(reqOptions){
-      // _proxy.updateEachButtonType(reqOptions);
+      _proxy.updateEachButtonType(reqOptions);
+      _destroy.bannerLayout();
+      _destroy.modalLayout();
+      this.init({}, _userCallback);
     },
     setContent       :function(reqOptions){
-      // _proxy.updateEachContentType(reqOptions);
+      _proxy.updateEachContentType(reqOptions);
+      _destroy.bannerLayout();
+      _destroy.modalLayout();
+      this.init({}, _userCallback);
     },
     setImage         :function(){
       //Coming Soon
