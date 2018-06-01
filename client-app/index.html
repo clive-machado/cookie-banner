@@ -8,7 +8,13 @@
   <title>Document</title>
 </head>
 <body>
-  <script src="../cookie-banner.js"></script>
+  <script src="../cookie-banner.js">
+  </script>
+  <script>
+    CookieBanner.init({}, function(onButtonClickResponse){
+      console.log("Updated cookie value : ", onButtonClickResponse);
+    });
+  </script>
   <script src="index.js"></script>
 </body>
 </html>

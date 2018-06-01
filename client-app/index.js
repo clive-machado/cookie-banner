@@ -131,31 +131,30 @@
 // });
 
 
-console.log("cookieValue", cookieValue );
+// console.log("cookieValue", cookieValue );
 
+// CookieBanner.setCookieName({  
+//   "name"    : "updated -cookies",
+//   "expires" : 7, 
+// });
 
-CookieBanner.setCookieName({  
-  "name"    : "updated -cookies",
-  "expires" : 7, 
-});
+// CookieBanner.setButton({
+//   "type"        : "banner",
+//   "title"       : "updated Accept All button",
+//   "action"      : "accept",   
+//   "id"          : "someID",
+//   "class"       : "",
+//   "enable"      : true
+// });
 
-CookieBanner.setButton({
-  "type"        : "banner",
-  "title"       : "updated Accept All button",
-  "action"      : "accept",   
-  "id"          : "someID",
-  "class"       : "",
-  "enable"      : true
-});
-
-CookieBanner.setButton({
-  "type"        : "tab",
-  "title"       : "updated Accept All button",
-  "action"      : "accept",   
-  "id"          : "someID-taby",
-  "class"       : "",
-  "enable"      : true
-});
+// CookieBanner.setButton({
+//   "type"        : "tab",
+//   "title"       : "updated Accept All button",
+//   "action"      : "accept",   
+//   "id"          : "someID-taby",
+//   "class"       : "",
+//   "enable"      : true
+// });
 
 // CookieBanner.setContent({
 //   "type"        : "tab",
