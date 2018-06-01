@@ -61,17 +61,19 @@ Updated cookie value : { "action" : "accept/reject", "user_consent"  : {} }
 
 ```json
 {
-  "content"       : [], //Array of Objects 
-  "buton"         : [], //Array of Objects
+  "content"       : [], /*Array of Objects*/
+  "buton"         : [], /*Array of Objects*/
    "cookie_name"  : {
-     "name"     : "CookieConsent", // *Required Field
-     "expires"  : 2 //Number In Days (Example : 1, 31, 365...) *Required Field
+     "name"     : "CookieConsent", /* *Required Field */
+     "expires"  : 2 /* Number In Days (Example : 1, 31, 365...) *Required Field */
    }
 }
 ```
 <p>- Any Required Fileds if either <code>null/undefined/empty</code> the particular object block will be replaced by the default config.<p>
 
-<h3>3. What is the default Cookie Banner config uses?</h3>
+<hr>
+
+<h3>3. What is the default Cookie Banner config ?</h3>
 
 <p>- Here is the default config for content</p>
 
@@ -176,4 +178,109 @@ Updated cookie value : { "action" : "accept/reject", "user_consent"  : {} }
   }]
 }
 ```
+
+<p>- The following is the default config for button </p>
+
+```JSON
+{
+  "button"      : [{
+      "type"        : "banner",
+      "title"       : "Accept All Cookies",
+      "action"      : "accept",     
+      "id"          : "banner-button-accept",
+      "class"       : "cbc-button-accept",
+      "enable"      : true
+    },{
+      "type"        : "banner",
+      "title"       : "X",
+      "action"      : "reject",     
+      "id"          : "banner-button-reject",
+      "class"       : "cbc-button-reject",
+      "enable"      : true
+    },{
+      "type"        : "banner",
+      "title"       : "Cookie Settings",
+      "action"      : "settings",     
+      "id"          : "banner-button-settings",
+      "class"       : "cbc-button-settings",
+      "enable"      : true
+    },{
+      "type"        : "tab",
+      "title"       : "Save Settings",
+      "action"      : "accept",     
+      "id"          : "modal-button-accept",
+      "class"       : "csm-button-accept",
+      "enable"      : true
+  }]
+}
+```
+<p>- The following is default cconfig for cookie name</p>
+
+```JSON
+{
+  "cookie_name"  : {
+    "name"    : "CookieBannerConsent",
+    "expires" : 1,
+  }
+}
+```
+
+<hr>
+
+<h3>4. How to set Custom button ?</h3>
+
+```Javascript
+CookieBanner.setButton({
+  "type"        : "tab/banner", //Required Field
+  "title"       : "",
+  "action"      : "accept/reject/settings", //Required Field  
+  "id"          : "",
+  "class"       : "",
+  "enable"      : boolean
+});
+```
+
+<p>- Any Required Fileds if either <code>null/undefined/empty</code> the particular object block will be replaced by the default config.<p>
+
+<p>- This function will be updating the previous button with same<code> type</code> and <code>action</code>.</p>
+
+<hr>
+
+<h3>5. How to Set Custom cookie name and expiry?</h3>
+
+```javascript
+CookieBanner.setCookieName({
+  "name"    : "", //Required Field
+  "expires" : number /* Number In Days (Example : 1, 31, 365...) *Required Field */
+});
+```
+<p>- Any Required Fileds if either <code>null/undefined/empty</code> the particular object block will be replaced by the default config.<p>
+
+<hr>
+
+<h3>6. How to provide custom Content ?</h3>
+
+```javascript
+CookieBanner.setContent({
+  "type"        : "tab/banner", //Required Field
+  "id"          : "banner-text-content/modal-tab-privacy/modal-tab-strict/modal-tab-performance/modal-tab-personalisation/modal-tab-targeting", //unique identities //Required Field
+  "class"       : "",
+  "position"    : number, // only tab support
+  "checkbox"    : boolean, // only tab support 
+  "title"       : "", // only tab support
+  "template"    : "", //Required Field
+  "enable"      : boolean, // only tab support
+  "show_cookies": boolean, // only tab support
+  "cookies"     : [{
+    "key"     : "", //Required Field
+    "name"    : ""  //Required Field
+  }] // only tab support
+});
+```
+<p>- Any required fileds if either <code>null/undefined/empty</code> the particular object block will be replaced by the default config.<p>
+
+<p>- Any "Only Tab support" fields need not be added if <code>type</code> is <code>banner</code>.<p>
+
+<p>- The cookies array is displayed right below the content, the cookies array cannot be <code>null/undefined/empty</code> either set it <code>false</code> by setting key <code>show_cookies</code> to <code>false</code>.</p>
+
 
