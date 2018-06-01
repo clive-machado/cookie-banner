@@ -1,3 +1,7 @@
+/**
+ * You can uncomment the functions below to look at how the library works.
+ */
+
 // CookieBanner.init({
 //   "content" :[{
 //     "type"        : "banner",
