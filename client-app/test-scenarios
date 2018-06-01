@@ -1,0 +1,7 @@
+1. When setting init and sending settings 
+  - Checks for empty config
+
+2. In setCookiesName the one with empty keys should not be updated.
+3. 'name' is mandatory in setCookiesName().
+4. setButon validates type to be either 'tab/banner' and action to be either 'accept/reject/settings'
+5.
