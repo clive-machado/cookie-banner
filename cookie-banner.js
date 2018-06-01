@@ -168,7 +168,6 @@ var CookieBanner = (function(){
     },
     // T // 
     toggleBanner : function(mergedConfig, btnAction){
-      console.log("asf", mergedConfig, btnAction);
       if(_util.validate.toHideBanner(mergedConfig.cookie_name.name) || btnAction === 'reject'){
         document.getElementById("cookie-banner-container").style.display = "none";
       }else{
