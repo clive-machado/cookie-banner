@@ -267,25 +267,31 @@ var CookieBanner = (function(){
       };
     },
     updateButtonType          :function(resOptions){
-      resOptions.map(function(buttonObject){
-        _proxy.updateEachButtonType(buttonObject);
-      });
+      if(resOptions){
+        resOptions.map(function(buttonObject){
+          _proxy.updateEachButtonType(buttonObject);
+        });
+      }
     },
     updateContentType         :function(resOptions){
-      resOptions.map(function(contentObject){
-        _proxy.updateEachContentType(contentObject);
-      });
+      if(resOptions){
+        resOptions.map(function(contentObject){
+          _proxy.updateEachContentType(contentObject);
+        });
+      }
     },
     updateSettingsConfig      :function(resOptions){
-      var newResOptions = { "new_object" : resOptions, "merged_config" : mergedConfig };
-      if(newResOptions.new_object.content && _util.validate.contentConfig(newResOptions.new_object)){
-        this.updateContentType(newResOptions.new_object.content);         
-      }
-      if(newResOptions.new_object.button && _util.validate.buttonConfig(newResOptions.new_object)){
-        this.updateButtonType(newResOptions.new_object.button);
-      }
-      if(newResOptions.new_object.cookie_name && _util.validate.cookieConfig(newResOptions.new_object)){
-        this.updateCookieName(newResOptions.new_object.cookie_name);        
+      if(resOptions){
+        var newResOptions = { "new_object" : resOptions, "merged_config" : mergedConfig };
+        if(newResOptions.new_object.content && _util.validate.contentConfig(newResOptions.new_object)){
+          this.updateContentType(newResOptions.new_object.content);         
+        }
+        if(newResOptions.new_object.button && _util.validate.buttonConfig(newResOptions.new_object)){
+          this.updateButtonType(newResOptions.new_object.button);
+        }
+        if(newResOptions.new_object.cookie_name && _util.validate.cookieConfig(newResOptions.new_object)){
+          this.updateCookieName(newResOptions.new_object.cookie_name);        
+        }
       }
     }
   };
