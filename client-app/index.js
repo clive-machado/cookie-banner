@@ -133,10 +133,10 @@ CookieBanner.init({
 console.log("cookieValue", cookieValue );
 
 
-CookieBanner.setCookieName({  
-  "name"    : "updated -cookies",
-  "expires" : 7, 
-});
+// CookieBanner.setCookieName({  
+//   "name"    : "updated -cookies",
+//   "expires" : 7, 
+// });
 
 // CookieBanner.setButton({
 //   "type"        : "banner",

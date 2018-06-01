@@ -168,6 +168,7 @@ var CookieBanner = (function(){
     },
     // T // 
     toggleBanner : function(mergedConfig, btnAction){
+      console.log("asf", mergedConfig, btnAction);
       if(_util.validate.toHideBanner(mergedConfig.cookie_name.name) || btnAction === 'reject'){
         document.getElementById("cookie-banner-container").style.display = "none";
       }else{
@@ -234,7 +235,7 @@ var CookieBanner = (function(){
       },
       /// T ///
       toHideBanner :function(cookieName){
-        return _util.getCookieValueByName(cookieName) ? JSON.parse(_util.getCookieValueByName(cookieName)).action === 'accept' ? true : false : false;
+        return this.ifCookieNameSet(cookieName) ? JSON.parse(_util.getCookieValueByName(cookieName)).action === 'accept' ? true : false : false;
       }
     },
   };
@@ -522,13 +523,13 @@ var CookieBanner = (function(){
     /* Dear Maintainer, please arrange functions in alphabetical order makes it easier to find. */
 
     // C //
-    closeModal  :function(eventSettings){
+    closeModal        :function(eventSettings){
       if(eventSettings && eventSettings.id){
         document.getElementById(eventSettings.id).style.display = "none";    
       }
     },
     // O //
-    openModal   :function(eventSettings){
+    openModal         :function(eventSettings){
       if(eventSettings && eventSettings.id){
         document.getElementById(eventSettings.id).style.display = "block";
         this.switchModalTabs({ "id" : "modal-tab-privacy", "action" : "switch" });
@@ -536,7 +537,7 @@ var CookieBanner = (function(){
       _clickAction.setAllUserConsent(mergedConfig);      
     },
     // S //
-    switchModalTabs :function(eventSettings){
+    switchModalTabs   :function(eventSettings){
       mergedConfig.content.map(function(contentObj){
         if(contentObj.type === 'tab' && contentObj.id !== eventSettings.id && contentObj.enable){
           document.getElementById(contentObj.id).style.display = "none";
@@ -548,7 +549,7 @@ var CookieBanner = (function(){
       document.getElementById(eventSettings.id + '-button').className += " active-button";
       document.getElementById(eventSettings.id).className += " active-tab";
     },
-    saveConsent :function(eventSettings){
+    saveConsent       :function(eventSettings){
       if(eventSettings && eventSettings.type && (eventSettings.type === 'banner' || eventSettings.type === 'tab') && eventSettings.action && (eventSettings.action === 'accept' || eventSettings.action === 'reject')){
         cookieValue         = JSON.stringify({ "action" : eventSettings.action, "user_consent": userConsent});
         var date            = new Date();
@@ -556,6 +557,7 @@ var CookieBanner = (function(){
         date.setTime(date.getTime() + (daysToSetCookie * 24 * 60 * 60 * 1000));
         document.cookie = mergedConfig.cookie_name.name + "=" + cookieValue + "; expires=" + date.toGMTString();
         if(eventSettings.type === 'tab' && eventSettings.action === 'accept'){
+          // this.setAllUserConsentOnAccept(mergedConfig);          
           this.closeModal({ "id" : "modal-settings-wrapper", "action" : "close" });          
         }
         _userCallback(JSON.parse(cookieValue));
@@ -573,14 +575,14 @@ var CookieBanner = (function(){
         this.setUserConsent(eventSettings);
       }
       
-      _util.toggleBanner(mergedConfig, eventSettings.action);      
+      _util.toggleBanner(mergedConfig, eventSettings.action);
     },
-    setUserConsent  :function(eventSettings){
+    setUserConsent    :function(eventSettings){
       if(eventSettings && eventSettings.id){     
         userConsent[eventSettings.id] = document.getElementById(eventSettings.id + '-input').checked;
       }
     },
-    setInputChecked :function(cookieConsent){
+    setInputChecked   :function(cookieConsent){
       for (var userCookieConsent in cookieConsent.user_consent){
         userConsent[userCookieConsent] = document.getElementById(userCookieConsent + '-input').checked = cookieConsent.user_consent[userCookieConsent];
       }
@@ -595,6 +597,12 @@ var CookieBanner = (function(){
         });
       }
     },
+    setAllUserConsentOnAccept :function(mergedConfig){
+      mergedConfig.content.map(function(contentObj){
+        if(contentObj.type && contentObj.type === "tab" && contentObj.checkbox && contentObj.enable)
+          userConsent[contentObj.id] = document.getElementById(contentObj.id + '-input').checked;
+      });
+    }
   }
 
   /**
@@ -629,13 +637,13 @@ var CookieBanner = (function(){
     },
     // S //
     setCookieName    :function(reqOptions){
-      _proxy.updateCookieName(reqOptions);
+      // _proxy.updateCookieName(reqOptions);
     },
     setButton        :function(reqOptions){
-      _proxy.updateEachButtonType(reqOptions);
+      // _proxy.updateEachButtonType(reqOptions);
     },
     setContent       :function(reqOptions){
-      _proxy.updateEachContentType(reqOptions);
+      // _proxy.updateEachContentType(reqOptions);
     },
     setImage         :function(){
       //Coming Soon
