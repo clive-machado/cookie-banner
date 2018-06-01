@@ -124,17 +124,19 @@ CookieBanner.init({
     }],
     "cookie_name"  : {
       "name"    : "Changed - CookieBannerConsent",
-      "expires" : 3,
+      "expires" : 365,
     },
   }, function(data){
     console.log("data", data);
 });
 
 console.log("cookieValue", cookieValue );
-// CookieBanner.setCookieName({  
-//   "name"    : "asfafdfsd",
-//   "expires" : "", 
-// });
+
+
+CookieBanner.setCookieName({  
+  "name"    : "updated -cookies",
+  "expires" : 7, 
+});
 
 // CookieBanner.setButton({
 //   "type"        : "banner",

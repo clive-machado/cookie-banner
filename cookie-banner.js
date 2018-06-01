@@ -630,15 +630,12 @@ var CookieBanner = (function(){
     // S //
     setCookieName    :function(reqOptions){
       _proxy.updateCookieName(reqOptions);
-      _init();
     },
     setButton        :function(reqOptions){
       _proxy.updateEachButtonType(reqOptions);
-      _init();
     },
     setContent       :function(reqOptions){
       _proxy.updateEachContentType(reqOptions);
-      _init();
     },
     setImage         :function(){
       //Coming Soon
