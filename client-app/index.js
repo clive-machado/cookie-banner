@@ -131,8 +131,7 @@
 // });
 
 
-console.log("cookieValue", cookieValue );
-
+// console.log("cookieValue", cookieValue );
 
 // CookieBanner.setCookieName({  
 //   "name"    : "updated -cookies",
@@ -179,8 +178,9 @@ console.log("cookieValue", cookieValue );
 //   }] // only tab support
 // });
 
-CookieBanner.init();
-
+// CookieBanner.init({}, function(data){
+//   console.log("cal back", data);
+// });
 
 // CookieBanner.setContent({
 //   "type"        : "banner",

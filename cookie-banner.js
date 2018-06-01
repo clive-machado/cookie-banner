@@ -19,7 +19,7 @@ var CookieBanner = (function(){
       "id"          : "modal-tab-privacy", 
       "class"       : "csm-tab-privacy",
       "position"    : 1,
-      "checkbox"    : true,
+      "checkbox"    : false,
       "title"       : "Your Privacy", 
       "template"    : "<p>When you visit any web site, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalised web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.</p>",
       "enable"      : true,
@@ -49,7 +49,7 @@ var CookieBanner = (function(){
       "position"    : 3, 
       "checkbox"    : true, 
       "title"       : "Performance & Analytics Cookies", 
-      "template"    : "<p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site.</p></br><p>All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.</p>",
+      "template"    : "<p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site.</p><p>All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.</p>",
       "enable"      : true,
       "show_cookies": true,
       "cookies"     : [{
@@ -72,14 +72,14 @@ var CookieBanner = (function(){
       }]
   },{   
       "type"        : "tab",
-      "id"          : "modal-tab-targeting",
-      "class"       : "csm-tab-targeting",
+      "id"          : "modal-tab-targetting",
+      "class"       : "csm-tab-targetting",
       "position"    : 5,
       "checkbox"    : true,  
       "title"       : "Targeting Cookies", 
       "template"    : "<p>These cookies may be set by us or our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant advertisings on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.</p>",
       "enable"      : true, 
-      "show-cookies": true,
+      "show_cookies": true,
       "cookies"     : [{
         "key"     : "_authExample",
         "name"    : "This is an Example Cookie"

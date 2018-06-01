@@ -123,7 +123,7 @@
         id  : modal-tab-strict-content
         id  : modal-tab-performance-content
         id  : modal-tab-personalisation-content
-        id  : modal-tab-targeting-content
+        id  : modal-tab-targetting-content
     id  : modal-footer
       id  : modal-button-accept
 
