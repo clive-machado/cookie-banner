@@ -33,7 +33,7 @@
 
 <p>- Use the following provided function to build the <b>Banner DOM</b> and <b>Modal DOM</b> </p>
 
-```javascript
+```
 CookieBanner.init({}, function(onButtonClickResponse){
   console.log("Updated cookie value : ", onButtonClickResponse);
 });
@@ -44,7 +44,7 @@ CookieBanner.init({}, function(onButtonClickResponse){
 <p>- The second argumet is a simple <code>callback function</code> which will be triggered after the user either clicks on button action <code>accept/reject</code>.</p>
 <p>- The callback response will contain the updated cookie value preference for the user.<p>
 
-```javascript
+```
 function(onButtonClickResponse){
   console.log("Updated cookie value : ", onButtonClickResponse);
 }
@@ -59,7 +59,7 @@ Updated cookie value : { "action" : "accept/reject", "user_consent"  : {} }
 
 <p>- Following is the overall schema for settings</p>
 
-```json
+```
 {
   "content"       : [], /*Array of Objects*/
   "buton"         : [], /*Array of Objects*/
@@ -77,7 +77,7 @@ Updated cookie value : { "action" : "accept/reject", "user_consent"  : {} }
 
 <p>- Here is the default config for content</p>
 
-```JSON
+```
 {
     "content"      : [{
       "type"        : "banner",
@@ -181,7 +181,7 @@ Updated cookie value : { "action" : "accept/reject", "user_consent"  : {} }
 
 <p>- The following is the default config for button </p>
 
-```JSON
+```
 {
   "button"      : [{
       "type"        : "banner",
@@ -216,7 +216,7 @@ Updated cookie value : { "action" : "accept/reject", "user_consent"  : {} }
 ```
 <p>- The following is default cconfig for cookie name</p>
 
-```JSON
+```
 {
   "cookie_name"  : {
     "name"    : "CookieBannerConsent",
@@ -229,7 +229,7 @@ Updated cookie value : { "action" : "accept/reject", "user_consent"  : {} }
 
 <h3>4. How to set Custom button ?</h3>
 
-```Javascript
+```
 CookieBanner.setButton({
   "type"        : "tab/banner", //Required Field
   "title"       : "",
@@ -248,7 +248,7 @@ CookieBanner.setButton({
 
 <h3>5. How to Set Custom cookie name and expiry?</h3>
 
-```javascript
+```
 CookieBanner.setCookieName({
   "name"    : "", //Required Field
   "expires" : number /* Number In Days (Example : 1, 31, 365...) *Required Field */
@@ -260,7 +260,7 @@ CookieBanner.setCookieName({
 
 <h3>6. How to provide custom Content ?</h3>
 
-```javascript
+```
 CookieBanner.setContent({
   "type"        : "tab/banner", //Required Field
   "id"          : "banner-text-content/modal-tab-privacy/modal-tab-strict/modal-tab-performance/modal-tab-personalisation/modal-tab-targeting", //unique identities //Required Field
