@@ -13,7 +13,7 @@ var CookieBanner = (function(){
       "type"        : "banner",
       "id"          : "banner-text-content",
       "class"       : "cbc-text-content",
-      "template"    : "<p>We use cookies to improve your experience and analyze site usage. Read <a href='#' target='_blank'>Cookie Policy<a>.<p>"
+      "template"    : "<p>We use cookies to improve your experience and analyze site usage. Read <a href='#' target='_blank'>Cookie Policy</a>.<p>"
     },{   
       "type"        : "tab",
       "id"          : "modal-tab-privacy", 
@@ -108,24 +108,24 @@ var CookieBanner = (function(){
   }],
     "button"      : [{
       "type"        : "banner",
+      "title"       : "Cookie Settings",
+      "action"      : "settings",     
+      "id"          : "banner-button-settings",
+      "class"       : "cbc-button-settings btn-banner",
+      "enable"      : true
+    },{
+      "type"        : "banner",
       "title"       : "Accept All Cookies",
       "action"      : "accept",     
       "id"          : "banner-button-accept",
-      "class"       : "cbc-button-accept",
+      "class"       : "cbc-button-accept btn-banner",
       "enable"      : true
     },{
       "type"        : "banner",
       "title"       : "X",
       "action"      : "reject",     
       "id"          : "banner-button-reject",
-      "class"       : "cbc-button-reject",
-      "enable"      : true
-    },{
-      "type"        : "banner",
-      "title"       : "Cookie Settings",
-      "action"      : "settings",     
-      "id"          : "banner-button-settings",
-      "class"       : "cbc-button-settings",
+      "class"       : "cbc-button-reject btn-banner",
       "enable"      : true
     },{
       "type"        : "tab",
@@ -650,7 +650,6 @@ var CookieBanner = (function(){
       _build.bannerLayout(mergedConfig);
       _build.modalLayout(mergedConfig);
       _util.toggleBanner(mergedConfig);
-      console.log("Initialized Cookie-Banner");
     };
   };
 

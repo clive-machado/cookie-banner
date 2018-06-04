@@ -1,9 +1,197 @@
-#cookie-banner-container, #modal-settings-wrapper{
-  border: 1px solid #ffd1d1;
-  padding: 1%;
+/***********************************************************************
+*                         Common          
+***********************************************************************/
+body{
+  background: url(../built-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: sans-serif;
 }
 
-#modal-body, #modal-header, #modal-footer{
-  border: 1px solid #ffd1d1;
-  padding: 1%;
+a{
+  color: #23BAB5;
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: #F38044;
+}
+
+/* cookie load animation move up  */
+@-webkit-keyframes moveup { 
+  from{
+    bottom:-80px
+  }to{
+    bottom:0
+  }
+}
+@keyframes moveup {
+  from{
+    bottom:-80px
+  }to{
+    bottom:0
+  }
+}
+
+/* cookie load animation move down  */
+@-webkit-keyframes movedown { 
+  from{
+    top:-80px
+  }to{
+    top:0
+  }
+}
+@keyframes movedown {
+  from{
+    top:-80px
+  }to{
+    top:0
+  }
+}
+
+/***********************************************************************
+*                               Banner          
+***********************************************************************/
+
+#cookie-banner-container{
+  background: #101010f7;
+  color: #fff;
+  padding: 0.2% 0.5%;
+  width: 100%;  
+  z-index: 3000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: moveup 800ms;
+  animation: moveup 800ms;
+}
+
+/* Banner Text Wrapper */
+#banner-text-wrapper{
+  display: inline-block;  
+  width: 65%;
+  text-align: center;
+  vertical-align: middle;
+}
+#banner-text-content{
+  padding: 0% 5%;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+/* Banner button Wrapper */
+.btn-banner{
+  padding: 6px 12px;
+  vertical-align: middle;
+  text-align: center;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-border-radius: 2px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+}
+#banner-button-wrapper {
+  display: inline-block;
+  width: 35%; 
+  vertical-align: middle; 
+}
+#banner-button-accept{
+  color: #fff;
+  background-color: #23BAB5;
+  border-color: #23BAB5;
+}
+#banner-button-accept:hover{
+  text-decoration: none;
+  color: #fff;
+  background-color: #1b8f8b;
+  border-color: #198683;
+}
+#banner-button-settings{
+  background: transparent;
+  color: #fff;
+}
+#banner-button-settings:hover{
+  color: #e5e4e2;
+}
+#banner-button-reject{
+  background: #ec4545;
+  color: #ffffff;
+  border: 1px solid #b42f2f;
+  border-radius: 2px;
+  margin: 0 0 0 5px;
+}
+#banner-button-reject:hover{
+  background: #db3f3f;
+}
+
+/***********************************************************************
+*                          Modal          
+***********************************************************************/
+
+
+/***********************************************************************
+*                           Media Queries          
+***********************************************************************/
+@media (max-width: 1000px){
+
+  /* Banner */
+  #banner-text-wrapper{
+    width: 55%;
+  }
+  #banner-button-wrapper{
+    width: 45%;
+  }
+}
+
+@media (max-width: 770px){
+
+  /* Banner */
+  #cookie-banner-container{
+    padding: 1% 0.5%;
+  }
+  #banner-text-wrapper{
+    display: block;
+    width: 100%; 
+  }
+  #banner-button-wrapper{
+    display: flex;
+    width: 93%;
+    flex-direction: row-reverse;
+  }
+  #banner-button-settings{
+    order: 1;
+  }
+  #banner-button-reject{
+    order: -1;
+  }
+}
+
+@media(max-width: 700px){
+
+  /* Banner */
+  #banner-button-wrapper{
+    display: block;
+    width: 100%;    
+    text-align: center;
+  }
+}
+
+@media (max-width: 375px){
+  
+  /* Banner */
+  #cookie-banner-container{
+    padding: 3% 0.5%;
+  }
+  #banner-text-content{
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .btn-banner{
+    padding: 1% 2%;
+    font-size: 13px;
+  }
 }

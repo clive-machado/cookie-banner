@@ -134,61 +134,38 @@
 //     console.log("data", data);
 // });
 
+/** Sets Custom Cookie Name */
+CookieBanner.setCookieName({  
+  "name"    : "BackendCookieConsent",
+  "expires" : 2,
+});
 
-// console.log("cookieValue", cookieValue );
+/* Sets Custom Button Name */
+CookieBanner.setButton({
+  "type"        : "banner",
+  "title"       : "<span><i class='fa fa-angle-right' aria-hidden='true'></i><span> Cookie Settings</span></span>",
+  "action"      : "settings",
+  "id"          : "banner-button-settings",
+  "class"       : "cbc-button-settings btn-banner",
+  "enable"      : false
+});
+CookieBanner.setButton({
+  "type"        : "banner",
+  "title"       : "<span><i class='fa fa-check' aria-hidden='true'></i><span> Accept All Cookies</span></span>",
+  "action"      : "accept",
+  "id"          : "banner-button-accept",
+  "class"       : "cbc-button-accept btn-banner",
+  "enable"      : true
+});
 
-// CookieBanner.setCookieName({  
-//   "name"    : "updated -cookies",
-//   "expires" : 7, 
-// });
+/** Sets Custom Cookie Name */
+CookieBanner.setContent({
+  "type"        : "banner",
+  "id"          : "banner-text-content",
+  "class"       : "cbc-text-content",
+  "template"    : "<p>Built.io uses cookies to improve your experience and analyze site usage. Read <a href='https://www.built.io/privacy-policy' target='_blank'> Cookie Policy</a>.</p>",
+});
 
-// CookieBanner.setButton({
-//   "type"        : "banner",
-//   "title"       : "updated Accept All button",
-//   "action"      : "accept",   
-//   "id"          : "someID",
-//   "class"       : "",
-//   "enable"      : true
-// });
-
-// CookieBanner.setButton({
-//   "type"        : "tab",
-//   "title"       : "updated Accept All button",
-//   "action"      : "accept",   
-//   "id"          : "someID-taby",
-//   "class"       : "",
-//   "enable"      : true
-// });
-
-// CookieBanner.setContent({
-//   "type"        : "tab",
-//   "id"          : "modal-tab-privacy", //unique identity
-//   "class"       : "",
-//   "position"    : 1, // only tab support
-//   "checkbox"    : true, // only tab support 
-//   "title"       : "updated - Strict Cookies", // only tab support
-//   "template"    : "<p>These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. Without these cookies, some parts of our site or the service being requested will be impossible to provide.</p>",
-//   "enable"      : true, //only tab support
-//   "show_cookies": true, //only tab support
-//   "cookies"     : [{
-//     "key"     : "sad",
-//     "name"    : "asfa"
-//   },{
-//     "key"     : "dum",
-//     "name"    : "rimda"
-//   },{
-//     "key"     : "kum",
-//     "name"    : "safvfvfsvsd"
-//   }] // only tab support
-// });
-
-// CookieBanner.init({}, function(data){
-//   console.log("cal back", data);
-// });
-
-// CookieBanner.setContent({
-//   "type"        : "banner",
-//   "id"          : "banner-text-content", //unique identity
-//   "class"       : "cbc-text-content",
-//   "template"    : "<p>We use cookies to personalize content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners in accordance with our Privacy Statement. You can manage your preferences in Cookie Settings. By using this website, you agree to the use of cookies.</p>",
-// });
+CookieBanner.init({}, function(data){
+  console.log("On button click :", data);
+});
