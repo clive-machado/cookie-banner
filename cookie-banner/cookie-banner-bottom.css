@@ -1,0 +1,369 @@
+/***********************************************************************
+*                         Common          
+***********************************************************************/
+body{
+  background: url(../built-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+a{
+  color: #23BAB5;
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: #F38044;
+}
+
+.btn{
+  padding: 6px 12px;
+  vertical-align: middle;
+  text-align: center;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-border-radius: 2px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* cookie load animation move up  */
+@-webkit-keyframes moveup { 
+  from{
+    bottom:-80px
+  }to{
+    bottom:0
+  }
+}
+@keyframes moveup {
+  from{
+    bottom:-80px
+  }to{
+    bottom:0
+  }
+}
+
+/* cookie load animation move down  */
+@-webkit-keyframes movedown { 
+  from{
+    top:-80px
+  }to{
+    top:0
+  }
+}
+@keyframes movedown {
+  from{
+    top:-80px
+  }to{
+    top:0
+  }
+}
+
+/* Fade In */
+@-webkit-keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Fade Out */
+@-webkit-keyframes fadeout {
+  100%   { opacity: 0; }
+  0% { opacity: 1; }
+}
+@-moz-keyframes fadeout {
+  100%   { opacity: 0; }
+  0% { opacity: 1; }
+}
+@-o-keyframes fadeout {
+  100%   { opacity: 0; }
+  0% { opacity: 1; }
+}
+@keyframes fadeout {
+  100%   { opacity: 0; }
+  0% { opacity: 1; }
+}
+
+/***********************************************************************
+*                               Banner          
+***********************************************************************/
+
+#cookie-banner-container{
+  background: #101010f7;
+  color: #fff;
+  padding: 0.2% 0.5%;
+  width: 100%;  
+  z-index: 3000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: moveup 800ms;
+  animation: moveup 800ms;
+}
+
+/* Banner Text Wrapper */
+#banner-text-wrapper{
+  display: inline-block;  
+  width: 65%;
+  text-align: center;
+  vertical-align: middle;
+}
+#banner-text-content{
+  padding: 0% 5%;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+/* Banner button Wrapper */
+#banner-button-wrapper {
+  display: inline-block;
+  width: 35%; 
+  vertical-align: middle; 
+}
+#banner-button-accept{
+  color: #fff;
+  background-color: #23BAB5;
+  border-color: #23BAB5;
+}
+#banner-button-accept:hover{
+  text-decoration: none;
+  color: #fff;
+  background-color: #1b8f8b;
+  border-color: #198683;
+}
+#banner-button-settings{
+  background: transparent;
+  color: #fff;
+}
+#banner-button-settings:hover{
+  color: #e5e4e2;
+}
+#banner-button-reject{
+  background: #ec4545;
+  color: #ffffff;
+  border: 1px solid #b42f2f;
+  border-radius: 2px;
+  margin: 0 0 0 5px;
+}
+#banner-button-reject:hover{
+  background: #db3f3f;
+}
+
+/***********************************************************************
+*                          Modal          
+***********************************************************************/
+.active-button{
+  background: #fff !important;
+  border: none !important;
+  outline: none !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+/* Modal Backdrop */
+#modal-backdrop{
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 3001;
+}
+
+/* Modal Sub Wrapper */
+#modal-sub-wrapper{
+  background: white;
+  min-height: 300px;
+  left: 50%;
+  top: 0px;
+  position: fixed;
+  width: 600px;
+  font-size: 13px;
+  height: 382px;
+  line-height: 18px;
+  margin: 100px 0px 0px -300px;
+  z-index: 3002;
+  -webkit-animation: fadein 500ms;
+  animation: fadein 500ms;
+}
+
+/* Modal Header */
+#modal-header{
+  padding: 1.5% 1.5% 1% 5%;
+}
+#modal-header-text{
+  display: inline-block;
+  font-size: 18px;  
+}
+#modal-button-close{
+  background: #cccccc;
+  color: #7a7a7a;
+  border: none;
+  border-radius: 16px;
+  float: right;
+  padding: 4px 7px;
+  cursor: pointer;
+  outline: none;
+}
+#modal-button-close:hover{
+  background: #c2bdbd;
+}
+
+/* Modal Body */
+#modal-body{
+  border-top: 1px solid #a8a3a3;
+  border-bottom: 1px solid #a8a3a3;
+  height: 255px;
+  overflow: hidden;
+  position: relative;
+}
+#tab-button-wrapper{
+  display: inline-block;
+  max-width: 20%;
+  float: left;
+}
+#tab-button-wrapper button{
+  padding: 9.73%;
+  width: 130px;
+  cursor: pointer;
+  background: #E6E6E8;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff2f2;
+}
+#tab-content-wrapper{
+  display: inline-block;
+  max-width: 70%;
+  margin-left: 6%;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 22px;
+  max-height: 260px;
+}
+
+/* Modal Footer */
+#modal-button-accept{
+  float: right;
+  margin: 2%;
+  color: #fff;
+  background-color: #23BAB5;
+  border-color: #23BAB5;
+  padding: 6px 12px !important;
+  font-size: 14px !important;
+}
+#modal-button-accept:hover{
+  text-decoration: none;
+  color: #fff;
+  background-color: #1b8f8b;
+  border-color: #198683;
+}
+
+/***********************************************************************
+*                           Media Queries          
+***********************************************************************/
+@media (max-width: 1000px){
+
+  /* Banner */
+  #banner-text-wrapper{
+    width: 55%;
+  }
+  #banner-button-wrapper{
+    width: 45%;
+  }
+}
+
+@media (max-width: 770px){
+
+  /* Banner */
+  #cookie-banner-container{
+    padding: 1% 0.5%;
+  }
+  #banner-text-wrapper{
+    display: block;
+    width: 100%; 
+  }
+  #banner-button-wrapper{
+    display: flex;
+    width: 93%;
+    flex-direction: row-reverse;
+  }
+  #banner-button-settings{
+    order: 1;
+  }
+  #banner-button-reject{
+    order: -1;
+  }
+}
+
+@media(max-width: 700px){
+
+  /* Banner */
+  #banner-button-wrapper{
+    display: block;
+    width: 100%;    
+    text-align: center;
+  }
+}
+
+@media(max-width: 620px){
+  #modal-sub-wrapper{
+    left: 7%;
+    right: 7%;
+    top: 8%;
+    position: absolute;
+    height: 500px;
+    margin: 0;
+    width: auto;
+  }
+  #modal-body{
+    height: 374px;
+    overflow: auto;
+  }
+  #tab-button-wrapper{
+    display: block;
+    max-width: 100%;
+    clear: both;
+    border-bottom: 1px solid #e6e6e8;  
+  }
+  #tab-button-wrapper button{
+    width: 100%;
+    padding: 2%
+  }
+  #tab-content-wrapper{
+    display: block;    
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 375px){
+  
+  /* Banner */
+  #cookie-banner-container{
+    padding: 3% 0.5%;
+  }
+  #banner-text-content{
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .btn{
+    padding: 1% 2%;
+    font-size: 13px;
+  }
+}

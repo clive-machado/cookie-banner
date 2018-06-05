@@ -111,10 +111,10 @@ a:focus, a:hover {
   width: 100%;  
   z-index: 3000;
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
-  -webkit-animation: moveup 800ms;
-  animation: moveup 800ms;
+  -webkit-animation: movedown 800ms;
+  animation: movedown 800ms;
 }
 
 /* Banner Text Wrapper */
@@ -265,6 +265,8 @@ a:focus, a:hover {
   color: #fff;
   background-color: #23BAB5;
   border-color: #23BAB5;
+  padding: 6px 12px !important;
+  font-size: 14px !important;
 }
 #modal-button-accept:hover{
   text-decoration: none;
@@ -360,7 +362,7 @@ a:focus, a:hover {
     font-size: 13px;
     line-height: 20px;
   }
-  .btn-banner{
+  .btn{
     padding: 1% 2%;
     font-size: 13px;
   }
