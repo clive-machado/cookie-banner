@@ -158,7 +158,7 @@ CookieBanner.setButton({
   "enable"      : true
 });
 
-/** Sets Custom Cookie Name */
+/** Sets Custom Banner Content */
 CookieBanner.setContent({
   "type"        : "banner",
   "id"          : "banner-text-content",

@@ -385,6 +385,8 @@ var CookieBanner = (function(){
         "element_class" : "cookie-settings-modal",
         "parent_tag"    : "body"
       });
+      this.modalBackdrop();
+      this.modalSubWrapper();
       this.modalHeader(config);
       this.modalBody(config);
       this.modalFooter(config);
@@ -398,12 +400,28 @@ var CookieBanner = (function(){
       //Close Modal every reload
       _clickAction.closeModal({ "id" : "modal-settings-wrapper", "action" : "close" });
     },
+    modalBackdrop           :function(){
+      _append.element({
+        "element_tag"   : "div",
+        "element_id"    : "modal-backdrop",
+        "element_class" : "csm-backdrop",
+        "parent_id"     : "modal-settings-wrapper"
+      });      
+    },
+    modalSubWrapper         :function(){
+      _append.element({
+        "element_tag"   : "div",
+        "element_id"    : "modal-sub-wrapper",
+        "element_class" : "csm-sub-wrapper",
+        "parent_id"     : "modal-settings-wrapper"
+      });
+    },
     modalHeader             :function(config){
       _append.element({
         "element_tag"   : "div",
         "element_id"    : "modal-header",
         "element_class" : "csm-header",
-        "parent_id"     : "modal-settings-wrapper"
+        "parent_id"     : "modal-sub-wrapper"
       });
     },
     modalBody               :function(config){
@@ -411,7 +429,7 @@ var CookieBanner = (function(){
         "element_tag"   : "div",
         "element_id"    : "modal-body",
         "element_class" : "csm-body",
-        "parent_id"     : "modal-settings-wrapper"
+        "parent_id"     : "modal-sub-wrapper"
       });
     },
     modalFooter             :function(config){
@@ -419,7 +437,7 @@ var CookieBanner = (function(){
         "element_tag"   : "div",
         "element_id"    : "modal-footer",
         "element_class" : "csm-footer",
-        "parent_id"     : "modal-settings-wrapper"
+        "parent_id"     : "modal-sub-wrapper"
       });
     },
     modalHeaderText         :function(config){
