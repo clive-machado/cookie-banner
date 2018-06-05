@@ -500,13 +500,28 @@ var CookieBanner = (function(){
             "parent_id"      : "tab-content-wrapper",
             "template"       : "<div id=" + JSON.stringify(contentObj.id + '-content') +">"+contentObj.template+"</div>"
           });
-          contentObj.checkbox && _append.element({
-            "element_tag"     : "input",
-            "element_id"      : contentObj.id + '-input',
-            "element_type"    : "checkbox",
-            "element_onchange": "CookieBanner.DOMclickAction.buttons(" + JSON.stringify({ "id" : contentObj.id, "action" : "check_input" }) + ")",
-            "parent_id"       : contentObj.id,
-          });
+          if(contentObj.checkbox){
+            _append.element({
+              "element_tag"     : "label",
+              "element_id"      : contentObj.id + '-switch',
+              "element_class"   : 'csm-switch',
+              "parent_id"       : contentObj.id,
+            });
+            _append.element({
+              "element_tag"     : "input",
+              "element_id"      : contentObj.id + '-input',
+              "element_class"   : 'csm-input-checkbox',
+              "element_type"    : "checkbox",
+              "element_onchange": "CookieBanner.DOMclickAction.buttons(" + JSON.stringify({ "id" : contentObj.id, "action" : "check_input" }) + ")",
+              "parent_id"       : contentObj.id + '-switch',
+            }); 
+            _append.element({
+              "element_tag"     : "span",
+              "element_id"      : contentObj.id + '-slider',
+              "element_class"   : 'csm-switch-slider',
+              "parent_id"       : contentObj.id + '-switch',
+            });
+          }
           if(contentObj.show_cookies) { 
             _append.element({
               "element_tag"    : "div",
