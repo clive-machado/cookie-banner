@@ -81,8 +81,8 @@ var CookieBanner = (function(){
       }]
   },{   
       "type"        : "tab",
-      "id"          : "modal-tab-targetting",
-      "class"       : "csm-tab-targetting",
+      "id"          : "modal-tab-targeting",
+      "class"       : "csm-tab-targeting",
       "position"    : 5,
       "checkbox"    : true,  
       "title"       : "Targeting Cookies", 
@@ -111,21 +111,21 @@ var CookieBanner = (function(){
       "title"       : "Cookie Settings",
       "action"      : "settings",     
       "id"          : "banner-button-settings",
-      "class"       : "cbc-button-settings btn-banner",
+      "class"       : "cbc-button-settings",
       "enable"      : true
     },{
       "type"        : "banner",
       "title"       : "Accept All Cookies",
       "action"      : "accept",     
       "id"          : "banner-button-accept",
-      "class"       : "cbc-button-accept btn-banner",
+      "class"       : "cbc-button-accept",
       "enable"      : true
     },{
       "type"        : "banner",
       "title"       : "X",
       "action"      : "reject",     
       "id"          : "banner-button-reject",
-      "class"       : "cbc-button-reject btn-banner",
+      "class"       : "cbc-button-reject",
       "enable"      : true
     },{
       "type"        : "tab",
