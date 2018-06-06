@@ -655,7 +655,7 @@ var CookieBanner = (function(){
       }
     },
     setAllUserConsent :function(mergedConfig){
-      if(_util.validate.ifCookieNameSet(mergedConfig.cookie_name.name)){
+      if(_util.validate.ifCookieNameSet(mergedConfig.cookie_name.name) && JSON.parse(_util.getCookieValueByName(mergedConfig.cookie_name.name)).action != 'reject'){
         JSON.parse(_util.getCookieValueByName(mergedConfig.cookie_name.name)).user_consent && this.setInputChecked(JSON.parse(_util.getCookieValueByName(mergedConfig.cookie_name.name)));
       }else{
         mergedConfig.content.map(function(contentObj){
