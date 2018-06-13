@@ -7,7 +7,7 @@
 <p>- Insert the following Link tag in your main .html page head section.</p>
 
 ```html
-<link rel="stylesheet" href="cookie-banner.css">
+<link rel="stylesheet" href="cookie-banner-bottom.css">
 ```
 
 <p>- Insert the following script tag in your main .html page just above the closing body tag.</p>
